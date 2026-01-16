@@ -1,0 +1,15 @@
+[package]
+name = "dioxus-test"
+version = "0.1.0"
+edition = "2024"
+
+
+[dependencies]
+# Dioxus 0.7 (Latest 2026 version)
+dioxus = { version = "0.7", features = ["web"] }
+# Bridge for JS interop
+wasm-bindgen = "0.2"
+serde-wasm-bindgen = "0.6"
+serde = { version = "1.0", features = ["derive"] }
+# Allows calling Tauri commands from Wasm
+wasm-bindgen-futures = "0.4"

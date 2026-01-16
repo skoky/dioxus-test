@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twilio Dioxus Dialer</title>
+    <script type="text/javascript" src="https://unpkg.com/@twilio/voice-sdk/dist/twilio.min.js"></script>
+    <script>
+
+        let device = null;
+
+        // Expose to window so Dioxus (Wasm) can see it
+        window.initializeTwilio = (token) => {
+            if (device) return;
+
+            // In Voice SDK 2.x and 3.x, you use 'new Device'
+            device = new Twilio.Device(token, {
+                logLevel: 1,
+                codecPreferences: ['opus', 'pcmu']
+            });
+
+            device.register();
+
+            device.on('registered', () => console.log('✅ Twilio Device Registered'));
+            device.on('error', (error) => console.error('❌ Twilio Error:', error));
+        };
+
+        window.makeCall = (toNumber) => {
+            if (device) {
+                const params = { To: toNumber };
+                device.connect({ params });
+            }
+        };
+
+        window.hangUp = () => {
+            if (device) device.disconnectAll();
+        };
+
+    </script>
+</head>
+<body>
+<div id="main"></div>
+</body>
+</html>

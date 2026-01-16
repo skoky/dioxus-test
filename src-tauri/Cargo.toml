@@ -1,0 +1,28 @@
+[package]
+name = "twilio-tauri-app"
+version = "0.1.0"
+description = "Tauri backend for Twilio Dioxus app"
+authors = ["you"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.5", features = ["config-json5"] }
+
+[dependencies]
+# Core Tauri functionality
+tauri = { version = "2.9", features = ["config-json5"] }
+
+# Serialization for sending data to/from the Dioxus frontend
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Optional: If you want to use environment variables for Twilio Keys
+dotenvy = "0.15"
+
+jsonwebtoken = { version = "10.2", features = ["rust_crypto"] }
+log = "0.4.29"
+chrono = "0.4"
+
+[features]
+# Keep standard features for production builds
+custom-protocol = ["tauri/custom-protocol"]

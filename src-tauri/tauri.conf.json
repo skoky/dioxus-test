@@ -1,0 +1,35 @@
+{
+  "productName": "TwilioDioxusApp",
+  "version": "0.1.0",
+  "identifier": "com.twilio-dioxus.app",
+  "build": {
+    "beforeDevCommand": "dx serve --platform web",
+    "devUrl": "http://localhost:8080",
+    "frontendDist": "../target/dx/dioxus-test/debug/web/public"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      {
+        "title": "Twilio Voice Dialer",
+        "width": 800,
+        "height": 600,
+        "resizable": true,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}

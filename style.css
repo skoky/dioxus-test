@@ -1,0 +1,86 @@
+:root {
+    --primary: #008CFF;
+    --success: #28a745;
+    --danger: #dc3545;
+    --bg: #f4f7f6;
+    --text: #333;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 320px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.status-badge {
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    color: white;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+.btn-call {
+    background-color: var(--success);
+}
+
+.btn-hangup {
+    background-color: var(--danger);
+}
