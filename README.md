@@ -8,10 +8,4 @@
 
 ## dev run
 
-Terminal 1:
-
-    dx server
-
-Terminal 2:
-
     cd src-tauri && cargo tauri dev
